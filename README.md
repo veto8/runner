@@ -2,8 +2,8 @@
 
 Docker to run after all your other dockers to perform tasks with a script.sh
 
-## Example usage docker_compose.ytml
-
+## Example usage docker_compose.yml
+```
  runner:
     container_name: runner
     image: "myridia/runner"
@@ -16,14 +16,17 @@ Docker to run after all your other dockers to perform tasks with a script.sh
       workgroup:
           ipv4_address: "10.5.0.5"
     entrypoint: ["/bin/bash", "/runner.sh"]
-
+```
 
 ## Example runner.sh, script what get loaded into the runner docker to perform all the tasks needed
 
-In this particular example, its wating until the connection to the postgres db is read. Afert
-its connect to the db and executed a delete query. In this case to delete all Odoo's ir_attachedment to force a recreation.
+In this example, the runner is wating until the connection to the postgres db is possible
 
+After, its connect to the db and executed a delete query.
 
+In this case, its delete all Odoo's ir_attachemnet to force a recreation.
+
+```
 #!/bin/bash
 #cd /var/www/html/
 
@@ -37,5 +40,23 @@ done
 echo "...Postgres Database is ready, now trying to clean up ir_attachment table"
 export PGPASSWORD=YOURPASSWORD
 psql -h db -U odoo odoo -c  "delete from ir_attachment where res_model='ir.ui.view' and name like '%assets_%';"
+```
 
+
+
+
+> [!IMPORTANT]  
+> Read the contribution guideline before adding a pull request.
+
+> [!CAUTION]
+> Don't execute the code without commenting the test cases.
+
+> [!WARNING]
+> DON'T DELETE THE `package.json` file!
+
+> [!TIP]
+> Use the command line to detect and resolve the errors!
+
+> [!NOTE]
+> I want the readers to read it carefully as it contains many important docs.
 
