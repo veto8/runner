@@ -18,7 +18,9 @@ Docker to run after all your other dockers to perform tasks with a script.sh
     entrypoint: ["/bin/bash", "/runner.sh"]
 ```
 
-## Example runner.sh, script what get loaded into the runner docker to perform all the tasks needed
+## Example ussage runner.sh 
+
+runner.sh script what get loaded into the runner docker to perform all the tasks needed
 
 In this example, the runner is wating until the connection to the postgres db is possible
 
@@ -43,7 +45,7 @@ psql -h db -U odoo odoo -c  "delete from ir_attachment where res_model='ir.ui.vi
 ```
 
 
-
+<!--
 
 > [!IMPORTANT]  
 > Read the contribution guideline before adding a pull request.
@@ -60,3 +62,4 @@ psql -h db -U odoo odoo -c  "delete from ir_attachment where res_model='ir.ui.vi
 > [!NOTE]
 > I want the readers to read it carefully as it contains many important docs.
 
+-->
