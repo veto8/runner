@@ -28,7 +28,7 @@ After, its connect to the db and executed a delete query.
 
 In this case, its delete all Odoo's ir_attachemnet to force a recreation.
 
-```
+
 #!/bin/bash
 #cd /var/www/html/
 
