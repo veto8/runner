@@ -1,4 +1,4 @@
-name: Publish Docker image
+name: Publish
 on:
   push:
     branches: ["main"]
@@ -19,22 +19,22 @@ jobs:
       attestations: write
       id-token: write
     steps:
-      - name: Check out the repo
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Log in to Docker Hub
+      - name: Login
         uses: docker/login-action@f4ef78c080cd8ba55a85445d5b36e214a81df20a
         with:
           username: ${{ secrets.DOCKER_USER }}
           password: ${{ secrets.DOCKER_PASS }}
 
-      - name: Extract metadata (tags, labels) for Docker
+      - name: Extract
         id: meta
         uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
         with:
           images: myridia/runner
 
-      - name: Build and push Docker image
+      - name: Build 
         id: push
         uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
         with:
