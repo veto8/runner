@@ -24,6 +24,7 @@ In this particular example, its wating until the connection to the postgres db i
 its connect to the db and executed a delete query. In this case to delete all Odoo's ir_attachedment to force a recreation.
 
 
+
 #!/bin/bash
 #cd /var/www/html/
 
