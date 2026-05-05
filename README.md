@@ -1,8 +1,4 @@
 
-You've hit on a very important optimization for CI/CD and automated tasks! Let's integrate the "fatty" runner concept and explain its benefits.
-
----
-
 ## The "Fatty" Runner: Pre-Installed Tools for Speed
 
 This setup allows you to define a dedicated Docker container, the "runner," that executes specific scripts *after* your other essential services (like databases or web applications) have started and are ready. This is invaluable for tasks such as:
