@@ -21,6 +21,10 @@ RUN apt-get update -y && apt-get install -y \
   postgresql-client \
   inetutils-ping  \
   net-tools \
-  git 
+  git \
+  nodejs \
+  npm \
+  tree
+
 
 CMD ["echo", "Hello Runner..."]
