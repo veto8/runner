@@ -1,6 +1,6 @@
 .PHONY: api
 
 build:
-	docker build -t myridia/runner:latest .
+	DOCKER_BUILDKIT=0 docker build -t myridia/runner:latest .
 
 default: build
