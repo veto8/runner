@@ -3,7 +3,8 @@ on:
   push:
     branches: ["main"]
     tags:
-      - 'latest'
+      - '*'
+  workflow_dispatch:
 
 jobs:
   push_to_registry:
